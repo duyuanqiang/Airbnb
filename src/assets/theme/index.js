@@ -17,6 +17,24 @@ const theme = {
         &:hover{
           box-shadow:var(--e-swdx-p);
         }
+    `,
+    desc7:`
+      margin: 0px !important;
+      word-wrap: break-word !important;
+      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
+      vertical-align: middle !important;
+      font-size: 12px !important;
+      line-height: 1.33333em !important;
+      font-weight: 800 !important;
+    `,
+    desc5:`
+      margin: 0px !important;
+      word-wrap: break-word !important;
+      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
+      vertical-align: middle !important;
+      font-size: 16px !important;
+      line-height: 1.375em !important;
+      font-weight: 800 !important;
     `
   }
 
