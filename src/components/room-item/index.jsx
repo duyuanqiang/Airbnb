@@ -4,9 +4,9 @@ import React, { memo } from 'react'
 import { RoomItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
-  const {itemData} = props
+  const {itemData,itemWidth="25%"} = props
   return (
-    <RoomItemWrapper>
+    <RoomItemWrapper itemWidth={itemWidth}>
       <div className="inner">
         <div className="cover">
           <img src={itemData.picture_url} alt="" />
@@ -21,26 +21,19 @@ const RoomItem = memo((props) => {
               <span>￥{itemData.price}</span>/晚
             </span>
           </div>
-           <div className="rate">
+          <div className="rate">
             {
               itemData.star_rating &&
-              <Rating name="size-small" readOnly defaultValue={0}  value={itemData.star_rating}   size="small"
+              <Rating  className='star' name="size-small" readOnly defaultValue={0}  value={itemData.star_rating}   size="small"
                 sx={{fontSize:"12px",color:"#00848A"}}
               />
             }
-            <span className='review' style={{color:`${itemData.bottom_info?.content_color}`,fontSize:`${itemData.bottom_info?.font_size}px`}}>
-              {
-                <span>{itemData.reviews_count}</span> 
-              }
-             {
-                itemData.bottom_info && <span>·</span>
-             } 
-             <span>
-              {
-                itemData.bottom_info?.content
-              }
-             </span>
-            </span>
+            <span className='review' style={{color:`${itemData.bottom_info?.content_color}`,
+            fontSize:`${itemData.bottom_info?.font_size}px`}}>
+              <span className='num'>{itemData.reviews_count}</span> 
+              {itemData.bottom_info && <span>·</span>} 
+              <span>{itemData.bottom_info?.content}</span>
+              </span>
             <div className="evaluate">
             </div>
           </div>
@@ -53,6 +46,7 @@ const RoomItem = memo((props) => {
 
 RoomItem.propTypes = {
   itemData:PropTypes.object,
+  itemWidth:PropTypes.string,
 }
 
 export default RoomItem

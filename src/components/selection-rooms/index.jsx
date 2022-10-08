@@ -9,7 +9,7 @@ const SelctionRooms = memo((props) => {
     <RoomsWrapper>
       {
         roomList.slice(0,8).map(item=>{
-          return <RoomItem itemData={item} widthItem={itemWidth} key={item.id}/>
+          return <RoomItem itemData={item} itemWidth={itemWidth} key={item.id}/>
         })
       }
     </RoomsWrapper>
@@ -19,6 +19,7 @@ const SelctionRooms = memo((props) => {
 
 SelctionRooms.propTypes = {
   roomList:PropTypes.array,
+  itemWidth:PropTypes.string,
 }
 
 export default SelctionRooms

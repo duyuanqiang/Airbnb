@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const RoomItemWrapper = styled.div`
 
-  width: 25%;
+  width: ${props=>props.itemWidth};
   padding: 8px;
   .inner{
     width: 100%;
@@ -44,6 +44,20 @@ export const RoomItemWrapper = styled.div`
         font-weight: 400;
         font-size: 14px;
         font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC";
+      }
+      .rate{
+        display: flex;
+        align-items: center;
+        .num{
+          display: inline-block;
+          font-weight: 600;
+          color: #484848;
+          font-size: 12px;
+          line-height: 22px;
+          height: 22px;
+          margin: 0px;
+          margin-left: 2px;
+        }
       }
     }
   }
