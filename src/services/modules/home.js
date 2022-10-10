@@ -15,3 +15,8 @@ export function getHomeDiscountData(params) {
     url:"/home/discount"
   })
 }
+export function getRecommoendData(params) {
+  return hmgRequest.get({
+    url:"/home/hotrecommenddest"
+  })
+}

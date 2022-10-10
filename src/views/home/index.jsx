@@ -8,10 +8,11 @@ import HomeSectionV2 from './c-cpns/home-section-v2';
 import { HomeWrapper } from './style';
 
 const Home = memo(() => {
-  const {goodPriceInfo,highScoreInfo,discountInfo} = useSelector((state) =>({
+  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo} = useSelector((state) =>({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
+    recommendInfo: state.home.recommendInfo,
   }),shallowEqual)
 
   const dispath =useDispatch();
@@ -22,6 +23,7 @@ const Home = memo(() => {
     <HomeWrapper>
        <HomeBanner/>
        <div className="content">
+        {isEmptyObject(recommendInfo) && <HomeSectionV2 infoData={recommendInfo} itemWidth="33.33%"/>}
         {isEmptyObject(discountInfo) && <HomeSectionV2 infoData={discountInfo} itemWidth="33.33%"/>}
         {isEmptyObject(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo}/>} 
         {isEmptyObject(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo}/>} 

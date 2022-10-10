@@ -4,6 +4,7 @@ import React, { memo, useCallback, useState } from 'react'
 import { SectionV2Wrapper } from './style'
 import SelctionRooms from '@/components/selection-rooms'
 import SectionTabs from '@/components/section-tabs'
+import SectionFooter from '@/components/section-footer'
 
 const HomeSectionV2 = memo((props) => {
   /**传入数据*/
@@ -19,6 +20,7 @@ const HomeSectionV2 = memo((props) => {
       <SelectionHeader  title={infoData.title} subtitle={infoData.subtitle} />
       <SectionTabs tabNames={tabNames} tabClick={tabClickHandle}/>
       <SelctionRooms roomList={infoData.dest_list?.[name]} itemWidth={itemWidth}></SelctionRooms>
+      <SectionFooter title={name}/>
     </SectionV2Wrapper>
   )
 })
