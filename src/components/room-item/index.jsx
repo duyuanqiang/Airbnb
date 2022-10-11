@@ -6,7 +6,7 @@ import { RoomItemWrapper } from './style'
 const RoomItem = memo((props) => {
   const {itemData,itemWidth="25%"} = props
   return (
-    <RoomItemWrapper itemWidth={itemWidth}>
+    <RoomItemWrapper itemWidth={itemWidth} color={itemData.star_rating_color}>
       <div className="inner">
         <div className="cover">
           <img src={itemData.picture_url} alt="" />
@@ -24,17 +24,15 @@ const RoomItem = memo((props) => {
           <div className="rate">
             {
               itemData.star_rating &&
-              <Rating  className='star' name="size-small" readOnly defaultValue={0}  value={itemData.star_rating}   size="small"
-                sx={{fontSize:"12px",color:"#00848A"}}
+              <Rating  className='star' name="size-small" readOnly defaultValue={0}  
+                value={itemData.star_rating}   size="small"
+                sx={{fontSize:"12px",color:itemData.star_rating_color}}
               />
             }
-            <span className='review' style={{color:`${itemData.bottom_info?.content_color}`,
-            fontSize:`${itemData.bottom_info?.font_size}px`}}>
-              <span className='num'>{itemData.reviews_count}</span> 
-              {itemData.bottom_info && <span>·</span>} 
-              <span>{itemData.bottom_info?.content}</span>
-              </span>
-            <div className="evaluate">
+            <div className="evaluate"  style={{color:`${itemData.bottom_info?.content_color}`,
+                fontSize:`${itemData.bottom_info?.font_size}px`}}>
+                <span className='num'>{itemData.reviews_count}</span> 
+                {itemData.bottom_info && <span>·{itemData.bottom_info?.content}</span>} 
             </div>
           </div>
         </div>

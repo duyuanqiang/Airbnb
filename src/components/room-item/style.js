@@ -26,6 +26,7 @@ export const RoomItemWrapper = styled.div`
       .desc{
         padding-bottom:5px;
         ${props=>props.theme.mixin.desc7}
+        color: ${props=>props.color};
       }
       .name{
         padding-bottom:5px;

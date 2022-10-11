@@ -20,3 +20,13 @@ export function getRecommoendData(params) {
     url:"/home/hotrecommenddest"
   })
 }
+export function getHomeLongForData(params) {
+  return hmgRequest.get({
+    url:"/home/longfor"
+  })
+}
+export function getHomePlusData(params) {
+  return hmgRequest.get({
+    url:"/home/plus"
+  })
+}

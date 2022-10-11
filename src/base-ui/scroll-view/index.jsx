@@ -18,7 +18,6 @@ const ScrollView = memo((props) => {
     const totalDistance = scrollWidth - clientWidth
     totalDistanceRef.current = totalDistance
     setShowRight(totalDistance>0)
-    console.log(scrollContentRef,scrollWidth,clientWidth)
   },[props.children])
   //注意offset相对于带有定位的父元素
   /**
@@ -30,7 +29,6 @@ const ScrollView = memo((props) => {
     setPosIndex(posIndex)
     const newEl = scrollContentRef.current.children[posIndex]
     const newOffsetLeft = newEl.offsetLeft;
-    console.log("newOffsetLeft=",newOffsetLeft);
     scrollContentRef.current.style.transform = `translate(-${newOffsetLeft}px)`
     //判断按钮显示,剩余可滚动的差值大于下次需要滚动的宽度,显示右侧按钮
     setShowRight(totalDistanceRef.current > newOffsetLeft);
