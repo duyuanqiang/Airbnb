@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const RoomItemWrapper = styled.div`
-
+  flex-shrink: 0;
   width: ${props=>props.itemWidth};
   padding: 8px;
   .inner{
@@ -33,10 +33,10 @@ export const RoomItemWrapper = styled.div`
         p{
           overflow: hidden;
           text-overflow: ellipsis;
-          display: -webkit-box;
+          display: -webkit-box; 
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
-          ${props=>props.theme.mixin.desc5}
+          ${props=>props.theme.mixin.desc5};
         }
         
         
@@ -56,7 +56,6 @@ export const RoomItemWrapper = styled.div`
           font-size: 12px;
           line-height: 22px;
           height: 22px;
-          margin: 0px;
           margin-left: 2px;
         }
       }

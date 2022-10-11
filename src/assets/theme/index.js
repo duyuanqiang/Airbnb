@@ -19,22 +19,22 @@ const theme = {
         }
     `,
     desc7:`
-      margin: 0px !important;
-      word-wrap: break-word !important;
-      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
-      vertical-align: middle !important;
-      font-size: 12px !important;
-      line-height: 1.33333em !important;
-      font-weight: 800 !important;
+      margin: 0px;
+      word-wrap: break-word;
+      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC";
+      vertical-align: middle;
+      font-size: 12px;
+      line-height: 1.33333em;
+      font-weight: 800;
     `,
     desc5:`
-      margin: 0px !important;
-      word-wrap: break-word !important;
-      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC" !important;
-      vertical-align: middle !important;
-      font-size: 16px !important;
-      line-height: 1.375em !important;
-      font-weight: 800 !important;
+      margin: 0px;
+      word-wrap: break-word;
+      font-family: Circular, PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC";
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 1.375em;
+      font-weight: 800;
     `
   }
 

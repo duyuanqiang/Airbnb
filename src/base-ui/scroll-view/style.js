@@ -30,9 +30,7 @@ export const ScrollWrapper = styled.div`
     overflow: hidden;
     .scroll-content{
       display: flex;
-      box-sizing: border-box;
-      justify-content: space-between;
-      white-space: nowrap;
+      transition: transform 0.25s ease;
     }
   }
 `
