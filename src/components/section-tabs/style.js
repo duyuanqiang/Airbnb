@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const TabsWrapper = styled.div`
- 
   .item{
+    margin-right: 16px;
     flex-basis: 120px;
     flex-shrink: 0;
+    white-space: nowrap;
     height: 48px;
     padding: 14px 16px;
     border-radius: 3px;

@@ -35,6 +35,11 @@ const theme = {
       font-size: 16px;
       line-height: 1.375em;
       font-weight: 800;
+    `,
+    active:`&.active{
+      color: #fff;
+      background: #00848A;
+    }
     `
   }
 
