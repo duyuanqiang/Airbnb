@@ -1,6 +1,7 @@
 import { getHomeGoodPriceData,getHomeHighScoreData,getHomeDiscountData, getRecommoendData, getHomeLongForData, getHomePlusData } from "@/services";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+//请求后端数据
 export const fetchHomeDataAction = createAsyncThunk("fetchdata",(payload,{dispatch})=>{
   getHomeGoodPriceData().then(res=>{
     dispatch(changeGoodPriceInfoAction(res))

@@ -1,7 +1,7 @@
 import { fetchRoomListAction } from '@/store/modules/entire/actionCreators'
 import { Pagination } from '@mui/material'
 import React, { memo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { PaginationWrapper } from './style'
 
 const EntirePagination = memo(() => {
@@ -9,7 +9,7 @@ const EntirePagination = memo(() => {
     totalCount: state.entire.totalCount,
     currentPage: state.entire.currentPage
 
-  }))
+  }),shallowEqual)
   const dispatch = useDispatch();
   function onChange(e,page){
     dispatch(fetchRoomListAction(page - 1))

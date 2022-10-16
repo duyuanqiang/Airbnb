@@ -7,6 +7,60 @@ export const RoomItemWrapper = styled.div`
   padding: 8px;
   .inner{
     width: 100%;
+    .slider{
+      position: relative;
+      .control{
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        z-index: 9;
+        visibility: hidden;
+        .btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 15%;
+          &.left{
+            background-image: linear-gradient(to left,transparent 0%,rgba(0,0,0,0.25) 100%);
+          }
+          &.right{
+            background-image: linear-gradient(to right,transparent 0%,rgba(0,0,0,0.25) 100%);
+          }
+        }
+      }
+      .indicator{
+        position: absolute;
+        width: 38.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* right: 0; */
+        bottom: 10px;
+        z-index: 5;
+        .dot{
+          display: inline-block;
+          margin: 0 5px;
+          flex-shrink: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #fff;
+          &.active{
+            background:red;
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+      &:hover .control{
+        visibility: visible;
+      }
+    }
     .cover{
       position:relative;
       padding: 66.66% 8px 0;
