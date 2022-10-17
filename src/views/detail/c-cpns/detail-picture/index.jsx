@@ -6,9 +6,16 @@ import { PictureWrapper } from './style'
 const DetailPicture = memo((props) => {
   const {picturesData} =props
   const [isOpenPicBro,setIsOpenPicBro] = useState(false);
-  function checkClickHandle(isOpen){
-    console.log(isOpen);
+
+  function checkClickHandle(isOpen,e){
+   document.body.style.overflow = "hidden"
     setIsOpenPicBro(isOpen)
+    e.stopPropagation()
+  }
+  function ClickHandle() {
+    document.body.style.overflow = "auto"
+    setIsOpenPicBro(false);
+
   }
   return (
     <PictureWrapper>
@@ -33,10 +40,10 @@ const DetailPicture = memo((props) => {
           }
         </div>
       </div>
-      <div className="show-btn" onClick={e=>checkClickHandle(true)}>
+      <div className="show-btn" onClick={e=>checkClickHandle(true,e)}>
         查看照片
       </div>
-      <PictureBrowser picturesData={picturesData}/>
+      {isOpenPicBro&& <PictureBrowser picturesData={picturesData} clickHandle={ClickHandle}/>}
     </PictureWrapper>
   )
 })
