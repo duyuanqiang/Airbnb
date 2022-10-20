@@ -32,57 +32,55 @@ const PictureBrowser = memo((props) => {
 
   return (
     <BrowserWrapper isNext={isNext} showList={isShowList}>
-      <div className="content">
-        <div className="top" onClick={closeClickHandle}>
-          <div className='close'>
-            <IconClose/>
-          </div>
+      <div className="top" onClick={closeClickHandle}>
+        <div className='close'>
+          <IconClose/>
         </div>
-        <div className="main">
-            <div className="left" onClick={e=>arrowClickHandle(false,e)}>
-              <IconArrowLeft width={80} height={80}/>
-            </div>
-            <div className="img">
-              <SwitchTransition mode='out-in'>
-                <CSSTransition key={picturesData[currentIndex]} timeout={200} classNames="pic">
-                    <img src={picturesData[currentIndex]} alt="" />
-                </CSSTransition>
-              </SwitchTransition>
-            </div>
-            <div className="right" onClick={e=>arrowClickHandle(true,e)}>
-              <IconArrowRight width={80} height={80}/>
-            </div>
-        </div>
-        <div className="preview">
-          <div className="info">
-            <div className="desc">
-              <div className="caption">
-                <span>
-                  2/12：Lovely smart open-plan living space with a corner sofa and accent chair, 
-                  wall-mounted 43 inch Smart TV, dining table and large windows overlooking Fitzrovia
-                </span>
-              </div>
-              <div className="hide" onClick={isIsShowList}>
-                <span>{isShowList? "显示":"隐藏"}图片列表</span>
-              </div>
-            </div>
-            <div className="indicator">
-              <Indicator selectIndex={currentIndex}>
-                {
-                  picturesData.map((item,index)=>{
-                    return (
-                      <div className={classNames("item",{active:currentIndex===index})} key={item}>
-                        <img src={item} alt="" />
-                      </div>
-                    )
-                  })
-                }
-              </Indicator>
-            </div>
-          </div>
-        </div>
-        
       </div>
+      <div className="main">
+          <div className="left" onClick={e=>arrowClickHandle(false,e)}>
+            <IconArrowLeft width={80} height={80}/>
+          </div>
+          <div className="img">
+            <SwitchTransition mode='out-in'>
+              <CSSTransition key={picturesData[currentIndex]} timeout={200} classNames="pic">
+                  <img src={picturesData[currentIndex]} alt="" />
+              </CSSTransition>
+            </SwitchTransition>
+          </div>
+          <div className="right" onClick={e=>arrowClickHandle(true,e)}>
+            <IconArrowRight width={80} height={80}/>
+          </div>
+      </div>
+      <div className="preview">
+        <div className="info">
+          <div className="desc">
+            <div className="caption">
+              <span>
+                2/12：Lovely smart open-plan living space with a corner sofa and accent chair, 
+                wall-mounted 43 inch Smart TV, dining table and large windows overlooking Fitzrovia
+              </span>
+            </div>
+            <div className="hide" onClick={isIsShowList}>
+              <span>{isShowList? "显示":"隐藏"}图片列表</span>
+            </div>
+          </div>
+          <div className="indicator">
+            <Indicator selectIndex={currentIndex}>
+              {
+                picturesData.map((item,index)=>{
+                  return (
+                    <div className={classNames("item",{active:currentIndex===index})} key={item}>
+                      <img src={item} alt="" />
+                    </div>
+                  )
+                })
+              }
+            </Indicator>
+          </div>
+        </div>
+      </div>
+        
     </BrowserWrapper>
   )
 })
