@@ -8,13 +8,13 @@ export const BrowserWrapper = styled.div`
   bottom: 0;
   background: rgba(2,2,2,1);
   z-index: 999;
+  .content{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    
     .top{
-      /* position: relative; */
+      position: relative;
       height: 86px;
       .close{
         position: absolute;
@@ -35,14 +35,13 @@ export const BrowserWrapper = styled.div`
         height: 100%;
         max-width: 105vh;
         img{
-          position: absolute;
+          /* position: absolute;
           top: 0;
           left: 0;
           right: 0;
-          margin: 0 auto;
+          margin: 0 auto; */
           height: 100%;
-          /* object-fit: cover; */
-          user-select: none;
+          /* user-select: none; */
         }
         /* 动画样式 */
         .pic-enter{
@@ -105,4 +104,5 @@ export const BrowserWrapper = styled.div`
         }
       }
     }
+  }
 `
