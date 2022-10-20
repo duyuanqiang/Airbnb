@@ -9,7 +9,6 @@ const App = memo(() => {
   return (
     <div className='app'>
       <AppHeader/>
-      <h2>hahahahahaaha</h2>
       <Suspense fallback="loading">
 
         <div className="page">
